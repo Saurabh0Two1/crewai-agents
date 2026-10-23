@@ -2,6 +2,10 @@
 import asyncio
 from pprint import pprint
 
+from crewai import flow
+
+from flows.unstructured_state import TaskManagementFlow
+
 async def main():
     print("Hello from crewai-agents!")
     # from basic_agent_code.introduction import basic_crew
@@ -10,16 +14,15 @@ async def main():
     # from basic_agent_code.structured_output import structured_output
     # from modular_crews.research_crew import ResearchCrew
     # from modular_crews.custom_tools import custom_tool
-    from flows.agentic_flow import MovieRecommendationFlow
     from dotenv import load_dotenv
     load_dotenv()
 
 
-    flow = MovieRecommendationFlow()
-    final_result =await flow.kickoff_async()
-    pprint(flow.state)
 
-    print(f"\nMovie Recommendation: {final_result}")
+    # Execute the flow
+    flow = TaskManagementFlow()
+    await flow.kickoff_async()
+
     
 if __name__ == "__main__":
     asyncio.run(main())

@@ -39,7 +39,9 @@ class MovieRecommendationFlow(Flow):
 
 
 """ USAGE
-flow = MovieRecommendationFlow()
-final_result = await flow.kickoff_async()
-print(f"\nMovie Recommendation: {final_result}")
+    from flows.agentic_flow import MovieRecommendationFlow
+    flow = MovieRecommendationFlow()
+    final_result =await flow.kickoff_async()
+    pprint(flow.state)
+    print(f"\nMovie Recommendation: {final_result}")
 """
