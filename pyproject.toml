@@ -1,0 +1,11 @@
+[project]
+name = "crewai-agents"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "crewai>=1.15.28",
+    "crewai-tools>=1.15.28",
+    "openai>=2.54.0",
+]
